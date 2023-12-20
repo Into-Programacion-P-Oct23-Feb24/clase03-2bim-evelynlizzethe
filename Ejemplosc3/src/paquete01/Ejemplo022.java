@@ -23,30 +23,32 @@ public class Ejemplo022 {
 
         // forma 1
         int[][] arreglo1 = new int[3][4]; //
-        System.out.printf("Uso de la opción length: %d\n", 
+        System.out.printf("Uso de la opción length: %d\n",
                 arreglo1.length);
 
-        System.out.printf("Valor en la posición [0][2]\n", 
+        System.out.printf("Valor en la posición [0][2]\n",
                 arreglo1[0][2]);
 
         arreglo1[0][2] = 1000;
-        for (int fila = 0; fila < arreglo1.length; fila++) {
-            for (int col = 0; col < arreglo1[fila].length; col++) {
+        for (int f = 0; f < arreglo1.length; f++) {
+            for (int c = 0; c < arreglo1[f].length; c++) {
                 System.out.printf("Ingrese un numero para posicion"
-                        + "[%d][%d]\n", fila, col);
+                        + "[%d][%d]\n", f, c);
                 valor = entrada.nextInt();
-                arreglo1[fila][col] = valor;
+                if (valor % 2 == 0 && valor >= 10) {
+                    valor = 0;
+                }
+                arreglo1[f][c] = valor;
+            }
+            // itero en la fila 3 
+            for (int fila = 0; fila < arreglo1.length; fila++) {
+                for (int col = 0; col < arreglo1[fila].length; col++) {
+                    System.out.printf("fila[%d] columna[%d] = %d\n",
+                            fila, col, arreglo1[fila][col]);
+                }
+            }
 
-            }
-        }
-        // itero en la fila 3 
-        for (int fila = 0; fila < arreglo1.length; fila++) {
-            for (int col = 0; col < arreglo1[fila].length; col++) {
-                System.out.printf("fila[%d] columna[%d] = %d\n",
-                        fila, col, arreglo1[fila][col]);
-            }
         }
 
     }
-
 }
